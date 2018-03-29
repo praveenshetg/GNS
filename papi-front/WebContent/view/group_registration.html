@@ -1,0 +1,42 @@
+<html>
+<body>
+<div class="main-div">
+<div class="form-div">
+<H1>Register Group</H1>
+<hr>
+<div id="group-table"></div>
+	<hr>
+  <form action="" id="grp_reg_form">
+    <label for="fname">Group Name</label>
+    <input type="text" id="pw_grp_name" name="group-name" placeholder="Group Name.." required="true">
+
+  <input type="submit" value="Create Group" id="create-group-btn">
+<!--     <div id="create-group-btn" class="pw-submit-btn">Submit</div> -->
+  </form>
+</div>
+</div>
+
+</body>
+
+<script>
+$("#group-table").load("view/groupView.html");
+$('#grp_reg_form').submit(function(e) { 
+	e.preventDefault();
+});
+$("#create-group-btn").click(function(){
+	var jsonData =JSON.parse('{"name":"'+$("#pw_grp_name").val()+'"}');
+	$.ajax({
+		  method: "POST",
+		  url: "http://localhost:9090/papi/group/addGroup",
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"name":"'+$("#pw_grp_name").val()+'"}'
+		})
+		.done(function( msg ) {
+		    alert( "Data Saved: " + msg );
+		});
+
+});
+</script>
+
+</html>

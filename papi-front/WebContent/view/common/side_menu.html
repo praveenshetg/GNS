@@ -1,0 +1,99 @@
+<!Doctype html>
+<html>
+<link rel="stylesheet" type="text/css" href="../../css/side-menu.css">
+<style>
+.btn-group button {
+    background-color: goldenrod;/*#0f6c9a; /* Green background */
+    border: 1px solid smokewhite; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #83878a;
+}
+.active-btn{
+	background:gray;
+	background-color: gray !important;
+}
+.msg-indicator{
+display:inline;
+color:white;
+background:red;
+border-radius:5%;
+    padding: 4px;
+}
+.blink {
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+</style>
+<body>
+
+
+<div class="btn-group">
+
+<button id="chat-btn" class="chat-btn active-btn" style="float:left"><div class="msg-indicator blink">1 New Messages </div></button>
+  <button id="grp-btn" class="grp-btn">Group Register</button>
+  <button id="usr-btn">User Register</button>
+  <button id="sch-btn">Scheduler</button>
+  <button  id="rctn-btn">Reaction Sheet</button>
+    <button>Settings</button>
+      <button><a onclick="showPopup('popup');">Show Popup</a>Logout</button>
+</div>
+</body>
+<script>
+function resetButtonStatus(){
+	$("#chat-btn").removeClass("active-btn");
+	$("#grp-btn").removeClass("active-btn");
+	$("#usr-btn").removeClass("active-btn");
+	$("#sch-btn").removeClass("active-btn");
+	$("#rctn-btn").removeClass("active-btn");
+}
+$("#chat-btn").click(function(){
+	resetButtonStatus();
+	$("#chat-btn").addClass("active-btn")
+	 $("#main-content").load("view/chatScreen.html");
+
+});
+$("#grp-btn").click(function(){
+	resetButtonStatus();
+	$("#grp-btn").addClass("active-btn")
+	 $("#main-content").load("view/group_registration.html");
+
+});
+$("#usr-btn").click(function(){
+	resetButtonStatus();
+	$("#usr-btn").addClass("active-btn")
+	 $("#main-content").load("view/user_registration.html");
+
+});
+$("#sch-btn").click(function() {
+	resetButtonStatus();
+	$("#sch-btn").addClass("active-btn")
+	$("#main-content").load("view/scheduler.html");
+
+});
+$("#rctn-btn").click(function() {
+	resetButtonStatus();
+	$("#rctn-btn").addClass("active-btn")
+	$("#main-content").load("view/reaction.html");
+
+});
+
+
+</script>
+</html>

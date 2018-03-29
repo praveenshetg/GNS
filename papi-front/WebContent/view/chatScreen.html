@@ -1,0 +1,112 @@
+<html>
+<style>
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+}
+</style>
+<body>
+<div class="main-div">
+<div class="form-div">
+<h1>Kings Eleven</h1>
+	<hr>
+	<div class="container">
+  <img src="images/image1.jpg" alt="Avatar">
+  <p>Hello. How are you today?</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div class="container darker">
+  <img src="images/image1.jpg" alt="Avatar" class="right">
+  <p>Hey! I'm fine. Thanks for asking!</p>
+  <span class="time-left">11:01</span>
+</div>
+
+<div class="container">
+  <img src="images/image1.jpg" alt="Avatar">
+  <p>Sweet! So, what do you wanna do today?</p>
+  <span class="time-right">11:02</span>
+</div>
+
+<div class="container darker">
+  <img src="images/image1.jpg" alt="Avatar" class="right">
+  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+  <span class="time-left">11:05</span>
+</div>
+  <form action="" id="grp_reg_form">
+   
+    <input type="text" id="pw_grp_name" name="group-name" placeholder="Type Something Here.." required="true">
+
+  <input type="submit" value="send" id="create-group-btn">
+<!--     <div id="create-group-btn" class="pw-submit-btn">Submit</div> -->
+  </form>
+</div>
+</div>
+
+</body>
+
+<script>
+$('#grp_reg_form').submit(function(e) { 
+	e.preventDefault();
+});
+$("#create-group-btn").click(function(){
+	var jsonData =JSON.parse('{"name":"'+$("#pw_grp_name").val()+'"}');
+	$.ajax({
+		  method: "POST",
+		  url: "http://localhost:9090/papi/group/addGroup",
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"name":"'+$("#pw_grp_name").val()+'"}'
+		})
+		.done(function( msg ) {
+		    alert( "Data Saved: " + msg );
+		});
+
+});
+</script>
+
+</html>

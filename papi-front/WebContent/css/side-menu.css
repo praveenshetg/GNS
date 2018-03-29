@@ -1,0 +1,38 @@
+.btn-group button {
+    background-color: goldenrod;/*#0f6c9a; /* Green background */
+    border: 1px solid smokewhite; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #83878a;
+}
+.active-btn{
+	background:gray;
+	background-color: gray !important;
+}
+.msg-indicator{
+display:inline;
+color:white;
+background:red;
+border-radius:5%;
+    padding: 4px;
+}
+.blink {
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

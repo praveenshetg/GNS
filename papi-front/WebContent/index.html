@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/forms.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/utility.js"></script>
+
+</head>
+
+<body >
+	<div class="nav">
+		<div class="company-name">
+			<div class="c-name">Company</div>
+		</div>
+		<div class="user-menu">
+			<div class="welcome-text">Welcome Praveen</div>
+			<img src="images/image1.jpg" alt="Avatar" style="width: 100%;">
+		</div>
+		
+	</div>
+	<div id="left-menu">
+		<div class="table-container menu-outer">
+			<div id="menu-list"></div>
+		</div>
+	</div>
+
+	<div id="outer-content">
+		<div class="table-container">
+			<div id="main-content"></div>
+		</div>
+	</div>
+</body>
+<script>
+	$(function() {
+		$("#menu-list").load("view/common/side_menu.html");
+		$("#main-content").load("view/chatScreen.html");
+
+	});
+</script>
+
+</html>

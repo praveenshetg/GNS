@@ -1,0 +1,177 @@
+input[type=text],textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+     background:#405d79;
+    color:white;
+}
+input[type=date],select{
+	height:25px;
+	    width: auto;
+    min-width: 200px;
+     padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display:block;
+    background:#405d79;
+    color:white;
+}
+input[ytpe=radio]{
+	 background:#405d79;
+    color:white;
+}
+input::-webkit-input-placeholder {
+color: White !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: White !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: White !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: White !important;  
+}
+input[type=submit] {
+    width: 100%;
+    background-color: goldenrod;/*#0f6c9a;*/
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.pw-submit-btn{
+#width: 100%;
+    background-color: #0f6c9a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #83878a;
+}
+
+.form-div {
+    border-radius: 5px;
+    #background-color: #f2f2f2;
+    padding: 20px;
+    width:60%;
+    height:100%;
+}
+.radio-grp div{
+	#float: left;
+}
+.radio-grp {
+	margin:2px;
+	padding:2px;
+}
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+	
+	.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: DodgerBlue;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.left-div {
+  width: 25%;
+  background-color: blue;
+}
+.content {
+  width: 50%;
+  background-color: green;
+}
+
+
+
+.btn-group button {
+    background-color: goldenrod;/*#0f6c9a; /* Green background */
+    border: 1px solid smokewhite; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #83878a;
+}
+
+.active-btn{
+	background:gray;
+}

@@ -1,0 +1,48 @@
+
+
+<html>
+
+<body>
+
+<div class="form-div">
+<H1>User Registration</H1>
+	<hr>
+  <form action="">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" id="fName" placeholder="First Name..">
+ <label for="fname">Last Name</label>
+    <input type="text" id="fname" name="firstname" id="lName" placeholder="Last Name..">
+     <label for="fname">Age</label>
+    <input type="text" id="fname" name="firstname" id="age" placeholder="Age ">
+     <label for="fname">Date Of Birth</label>
+    <input type="date" id="fname" name="firstname"  id ="dob" placeholder="Date Of Birth..">
+    <label for="fname">Group</label>
+    <select name="group" id="group">
+						<option value="1">Group1</option>
+						<option value="2">Group2</option>
+						<option value="3">Group3</option>
+
+				</select>
+    <input type="submit" value="Create User" id="create-usr-btn">
+<!--      <div id="create-user-btn" class="pw-submit-btn">Submit</div> -->
+  </form>
+</div>
+
+</body>
+<script type="text/javascript">
+$("#create-user-btn").click(function(){
+	$.ajax({
+		  method: "POST",
+		  url: "http://localhost:9090/papi/user/addUser/"+$("#group").val(),
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"fName":"'+$("#pw_grp_name").val()+',"lName":"'+$("#lName").val()+'"}'
+		})
+		.done(function( msg ) {
+		    alert( "Data Saved: " + msg );
+		});
+
+});
+</script>
+
+</html>

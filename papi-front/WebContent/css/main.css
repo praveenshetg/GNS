@@ -1,0 +1,97 @@
+h1 { 
+	#background: goldenrod;
+	padding: 5px;
+}
+
+body {
+	margin: 0px !important;
+}
+/* Create two equal columns that floats next to each other */
+#left-menu {
+	position: absolute;
+	top: 40;
+	left: 0;
+	width: 12%;
+	height: 100%;
+}
+
+#outer-content {
+	position: absolute;
+	top: 40;
+	right: 0;
+	width: 88%;
+	height: 100%;
+}
+
+.table-container {
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+#menu-list { #
+	vertical-align: middle;
+	height: 100%;
+	display: table-cell;
+	border: 0px solid #000;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#main-content { #
+	vertical-align: middle;
+	height: 100%;
+	display: table-cell;
+	border: 1px solid #000;
+}
+
+.nav {
+	height: 56px;
+	width: 100%;
+	background-color: #212121; /*#405d79;#24292e;*/
+}
+
+.user-menu {
+	margin-right: 40px !important;
+	float: right;
+	padding: 0px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
+	font-size: 14px;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.75);
+	display: table;
+}
+
+.user-menu img {
+	display: table-cell;
+	float: left;
+	max-width: 35px;
+	width: 35px;
+	margin-right: 10px;
+	border-radius: 50%;
+	margin-top: 10px !important;
+}
+
+.welcome-text {
+	display: table-cell;
+	margin-top: 10px !important;
+	vertical-align: middle;
+	margin-right: 2px;
+	color: white;
+}
+
+.menu-outer {
+	background: #212121;
+}
+
+.company-name {
+	float: left;
+}
+
+.c-name {
+	font-size: 28px;
+	padding: 12px;
+	color: white;
+}

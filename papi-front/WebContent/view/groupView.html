@@ -1,0 +1,50 @@
+<style>
+
+.grp-table table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.grp-table td,.grp-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.grp-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.grp-table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#data tr {
+  display: none;
+}
+</style>
+<div id="showData"></div>
+
+<script>
+var group=[{"name":"Akiddh dfdff-1","category":"General","status":"Active","users":2,"action":1},{"name":"Group-2","category":"General","status":"Active","users":8,"action":2},{"name":"Group-3","category":"General","status":"Active","users":10,"action":3},{"name":"Group-4","category":"General","status":"Active","users":12,"action":4}]
+for (var key in group) {
+	  var item = group[key];
+	  console.log(item)
+	  for (var key2 in item) {
+		  
+	    console.log(item[key2]);
+	  }
+	}
+	
+createDynamiTable(group);
+paginateTable("data",3);
+function editGroup(){
+
+	$("#main-div").load("view/editGroupView.html");
+	document.getElementById('pw_grp_name').value='xxxx';
+}
+$(document).ready(function(){
+    
+});
+</script>
