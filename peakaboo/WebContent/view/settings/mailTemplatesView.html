@@ -1,0 +1,65 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-radius: 0em 0em 15em 15em;
+    margin: 2px;
+    outline: none;
+    text-align: center;
+    font-size: 15px;
+    transition: 0.8s;
+    border: 1px solid #f9d036;
+}
+
+.active, .accordion:hover {
+    background-color: #F9CF36; 
+     border: 1px solid #dba520;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+</style>
+<h1><i class="fa fa-envelope"></i> Mail Templates</h1>
+<hr>
+<div>
+	<button class="accordion"><i class="fa fa-angle-double-right"></i> Scheduler <i class="fa fa-angle-double-left"></i></button>
+	<div class="panel">
+	<div id="sc-template-panel"></div>
+	</div>
+	
+	<button class="accordion"><i class="fa fa-angle-double-right"></i>User Registration <i class="fa fa-angle-double-left"></i></button>
+	<div class="panel">
+	<div id="user-reg-template-panel"></div>
+	</div>
+	
+	<button class="accordion"><i class="fa fa-angle-double-right"> </i>Reset Password <i class="fa fa-angle-double-left"></i></button>
+	<div class="panel">
+	<div id="reset-password-template-panel"></div>
+	</div>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+$("#sc-template-panel").load("view/settings/templates/schedulerTemplateForm.html");
+$("#user-reg-template-panel").load("view/settings/templates/userRegistrationTemplateForm.html");
+$("#reset-password-template-panel").load("view/settings/templates/resetPasswordTemplateForm.html");
+</script>

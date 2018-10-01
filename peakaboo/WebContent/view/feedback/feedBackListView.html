@@ -1,0 +1,59 @@
+<style>
+.grp-table {
+	width: 100%;
+}
+
+.grp-table table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.grp-table td, .grp-table th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+.grp-table th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+.grp-table tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#data tr {
+	display: none;
+}
+</style>
+<div id="showFeedBackData"></div>
+
+<script>
+var questions=[{"question":"Akiddh dfdff-1","type":"Radio Button","order":"2","category":"General","action":1},{"question":"Akiddh dfdff-1","type":"Radio Button","order":"2","category":"General","action":1},{"question":"Akiddh dfdff-1","type":"Radio Button","order":"2","category":"General","action":1},{"question":"Akiddh dfdff-1","type":"Radio Button","order":"2","category":"General","action":1},{"question":"Akiddh dfdff-1","type":"Radio Button","order":"2","category":"General","action":1}]
+
+// for (var key in group) {
+// 	  var item = group[key];
+// 	  console.log(item)
+// 	  for (var key2 in item) {
+		  
+// 	    console.log(item[key2]);
+// 	  }
+// 	}
+	
+createDynamiForm(questions,"showFeedBackData");
+//paginateTable("showFeedBackData",5);
+function editFBQuestion(flag){
+	if(flag){
+		$("#fb-form").show();
+	}else{
+		$("#fb-form").hide();
+	}
+}
+editFBQuestion(false);
+$(document).ready(function(){
+    
+});
+</script>

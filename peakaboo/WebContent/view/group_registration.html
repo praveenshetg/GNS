@@ -1,0 +1,48 @@
+
+<div class="main-div">
+<div class="form-div">
+<H1><i class="fa fa-group"></i> Register Group</H1>
+<hr>
+
+  <form action="" id="grp_reg_form">
+    <label for="fname">Group Name</label>
+    <input type="text" id="pw_grp_name" name="group-name" class="text-center" placeholder="Please Enter Unique Group Name" required>
+<label for="fname">Category</label>
+    <select name="group_category" id="group_category">
+   		 <option value="General">General</option>
+    </select>
+  <input type="submit" value="Create Group" id="create-group-btn">
+  </form>
+<div id="group-table"></div>
+</div>
+</div>
+<script>
+$("#group-table").load("view/groupView.html");
+$('#grp_reg_form').submit(function(e) { 
+	$(".spinner").show();
+	e.preventDefault();
+});
+$("#create-group-btn").click(function(){
+	$(".spinner").show();
+	if($("#pw_grp_name").val()==''){
+		showSnackBar("Please enter group Name.");
+		$(".spinner").hide();
+		return;
+	}
+	var jsonData =JSON.parse('{"name":"'+$("#pw_grp_name").val()+'"}');
+	$.ajax({
+		  method: "POST",
+		  url: projectDetails.url+""+projectDetails.restappname+"/group/addGroup",
+		  contentType: "application/json",
+		  data: '{"name":"'+$("#pw_grp_name").val().toUpperCase()+'"}'
+		}).done(function( msg ) {
+			$(".spinner").hide();
+			//$("#grp_reg_form input").val("");
+			showSnackBar("Group Created Successfully !!!")
+		  //  alert( "Data Saved: " + msg );
+		  getGroupList();
+			//paginateTable("grp-table",5);
+		});
+
+});
+</script>

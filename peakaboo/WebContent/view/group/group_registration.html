@@ -1,0 +1,46 @@
+
+<!-- Group Registration -->
+<div class="main-div">
+	<div class="form-div">
+		<H1>
+			<i class="fa fa-group"></i> Register Group
+		</H1>
+		<hr>
+
+		<form action="" id="grp_reg_form">
+			<label for="fname">Group Name</label> 
+			<input type="text" id="pw_grp_name" name="group-name" class="text-center" placeholder="Group Name.." required/> 
+			<input type="submit"  id="create-group-btn" value="Create Group">
+		</form>
+		<hr>
+		<!-- Dynamically Table will be loaded here -->
+		<div id="group-table"></div>
+		<hr>
+	</div>
+</div>
+<!-- End of Group Registration -->
+<script>
+	$("#group-table").load("view/groupView.html");
+	$('#grp_reg_form').submit(function(e) {
+		e.preventDefault();
+	});
+	$("#create-group-btn").click(
+			function() {
+				var jsonData = JSON.parse('{"name":"' + $("#pw_grp_name").val()
+						+ '"}');
+				$.ajax({
+							method : "POST",
+							url : this.projectDetails.url + ""
+									+ this.projectDetails.restappname
+									+ "/group/addGroup",
+							contentType : "application/json",
+							data : '{"name":"' + $("#pw_grp_name").val() + '"}'
+						}).done(function(msg) {
+					showSnackBar("Group Created Successfully !!!")
+					//  alert( "Data Saved: " + msg );
+					getGroupList();
+					//paginateTable("grp-table",5);
+				});
+
+			});
+</script>

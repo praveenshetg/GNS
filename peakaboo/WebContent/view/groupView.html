@@ -1,0 +1,85 @@
+<style>
+.grp-table{
+width: 100%;
+}
+.grp-table table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.grp-table td,.grp-table th {
+    #border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.grp-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+   #background: #312929;
+      background: #404040;
+    color: goldenrod;
+}
+
+.grp-table tr:nth-child(even) {
+    #background-color: #dddddd;
+    background-color:#eaeaea;
+    
+}
+.grp-table tr:nth-child(odd) {
+    #background-color: #dddddd;
+    background-color:#d8d4c5;
+}
+#data tr {
+  display: none;
+}
+#pages a{
+        color: white;
+    }
+.page-active{
+border: 1px solid #080505ab;
+    background: #f9d136;
+    color: white;
+    padding: 0px 5px;
+    margin: 0px;
+    }
+    #pages{
+        border: 1px solid #dddddd;
+    text-align: right;
+    padding: 8px;
+    background:#404040;
+    color: white;
+    }
+    
+    @media (max-width: 400px){
+    .grp-table th {
+    padding: 1px;
+        font-size: 10px;
+    }
+    
+.grp-table td,.grp-table th {
+padding: 1px;
+    font-size: 10px;
+}
+     #pages{
+     padding: 1px;
+         font-size: 10px;
+     }
+    }
+</style>
+<div id="showData" style="width: 100%;overflow: auto;"></div>
+<div id="pages"></div>
+<script>
+
+getGroupList();
+paginateTable("grp-table",5);
+function editGroup(){
+
+	$("#main-div").load("view/editGroupView.html");
+	document.getElementById('pw_grp_name').value='xxxx';
+}
+$(document).ready(function(){
+    
+});
+</script>

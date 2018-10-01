@@ -1,0 +1,74 @@
+	<link rel="stylesheet" type="text/css" href="css/user-profile.css">
+	<div class="form-div">
+		<H1>
+			<i class="fa fa-user"></i> User Profile
+		</H1>
+		<hr>
+		<form action="" id="user-reg-form">
+		<h4>Basic Information</h4>
+			<label for="fname">First Name<span class="required">*</span></label> <input type="text" id="fName"
+				name="firstname" placeholder="First Name"> <label
+				for="fname">Last Name</label> <input type="text" id="lName"
+				name="lastname" placeholder="Last Name">
+				 <label for="fname">Date Of
+				Birth</label> <input type="date" name="dob" id="dob"
+				placeholder="Date Of Birth">
+				<label for="fname">About
+				you</label> <input type="text" id="aboutYou" name="aboutYou"
+				placeholder="AboutYou">
+		<h4>Professional Information</h4>
+		 <label for="fname">Organization<span class="required">*</span></label>
+			<input type="text" id="organization" name="organization" id="age"
+				placeholder="Oganization Name"> <label for="fname">Designation</label>
+			<input type="text" id="designation" name="designation"
+				placeholder="Designation"> <label for="fname">Official
+				Email<span class="required">*</span></label> <input type="email" id="oEmail" name="oEmail"
+				placeholder="Official Email" readonly
+				style="background-color: #dcdad2" />
+				<h4>Contact Information</h4>
+		<label for="fname">Personal
+				Email</label> <input type="email" id="pEmail" name="pEmail"
+				placeholder="Personal Email"> <label for="fname">Phone
+				Number</label> <input type="number" id="phone" name="phone"
+				placeholder="Phone Number"> 
+<!-- 			<label for="fname">Profile Picture</label><br> -->
+			<h4>Profile Picture</h4>
+			<div class="uploadpic-div-outer" id="uploadpic-div-outer">
+				<img src="images/img_avatar.png" id="profile-img-tag" />
+				<div class="uploadpic-div">
+					<input id="profile-img-path" class="profile-img-path findDocumentOnboarding" type="file" />
+					<button type="button" id="upload-profile-pic-file"
+						class="ha-button upload-profile-pic-file">Choose</button>
+						<button type="button" id="uploadDocumentGeneral"
+						class="ha-button  uploadDocumentGeneral">Upload</button>
+				</div>
+			</div>
+			<hr>
+			<button type="button" id="changePasswordModalBtn" class="ha-button changePasswordModalBtn">Change
+				Password</button>
+			<input type="submit" value="Save Changes" id="update-usr-btn">
+		</form>
+
+	</div>
+		<!-- The Modal -->
+		<div id="changePasswordModal" class="pw-modal">
+			<!-- Modal content -->
+			<div class="pw-modal-content">
+				<div class="pw-modal-body">
+					<form action="" id="change-password-form" class="change-password-form">
+					<h2 class="change-pass-header">Change Password<span class="close">&times;</span></h2>
+					<br>
+						<label for="fname">Old Password<span class="required">*</span></label> <input type="password"
+							id="oldPassword" name="firstname" class ="pw-input" placeholder="Old Password">
+						<label for="fname">New Password<span class="required">*</span></label> <input type="text"
+							id="newPassword" name="lastname" class ="pw-input" placeholder="New Password">
+						<label for="fname">Confirm Password<span class="required">*</span></label> <input type="password"
+							id="confirmPassword" name="organization" id="age" class ="pw-input"
+							placeholder="Confirm Password">
+							<input type="submit" value="Submit" id="change-pass-btn">
+							
+					</form>
+				</div>
+			</div>
+		</div>
+<script src="js/userProfile.js"></script>

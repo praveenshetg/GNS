@@ -1,0 +1,15 @@
+.sc-form-div {
+	padding: 20px !important;
+	box-sizing: initial !important;
+}
+
+.sc-form {
+	box-sizing: initial !important;
+}
+
+.sc-form textarea, select{
+	    margin: 8px 0;
+}
+.ui[class*="left icon"].input>input {
+    border-color: goldenrod;
+}

@@ -1,0 +1,49 @@
+
+
+<html>
+<body>
+
+	<div class="form-div">
+	<H1><i class="fa fa-user"></i> User Auto Create</H1>
+	<hr>
+		<form action="" id="auto-user-reg-form">
+		 <label for="fname">Group</label>
+    <select name="group" id="group">
+						<option value="1">Group1</option>
+						<option value="2">Group2</option>
+						<option value="3">Group3</option>
+
+				</select>
+			<label
+				for="fname">Paste user list below.</label>
+			<textarea rows="30" cols="50" class="w-100 h-60" id="user-list"></textarea>
+			
+			<input type="submit" value="Submit" id="create-auto-user-btn">
+		</form>
+	</div>
+
+</body>
+
+<script>
+$('#auto-user-reg-form').submit(function(e) { 
+	e.preventDefault();
+});
+
+$("#create-auto-user-btn").click(function(){
+	var userList = $("#user-list").val().split("\n");
+	$.ajax({
+		  method: "POST",
+		  url: this.projectDetails.url+""+this.projectDetails.restappname+"/user/createAutoUsers/"+$("#group").val(),
+		  dataType: "json",
+		    contentType: "application/json",
+		  //data: '{"users":["praveenshetg1@gmail.com", "praveenshetg2@gmail.com", "praveenshetg3@gmail.com", "praveenshetg4@gmail.com", "praveenshetg5@gmail.com", "praveenshetg6@gmail.com", "praveenshetg7@gmail.com", "praveenshetg8@gmail.com", "praveenshetg9@gmail.com", "praveenshetg10@gmail.com", "praveenshetg11@gmail.com"]}'
+		  data:'{"users":["' + userList.join('","') + '"]}'
+		})
+		.done(function( msg ) {
+			showSnackBar("Users registered Successfully !!!")
+		});
+
+});
+</script>
+
+</html>

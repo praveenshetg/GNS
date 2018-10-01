@@ -1,0 +1,60 @@
+
+<style>
+.form-div input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: black;
+}
+</style>
+<body>
+	<div class="form-div">
+		<hr>
+		<form action="" id="user-reg-form">
+			<label for="fname">Subject</label> <input type="text" id="fname"
+				name="firstname" id="fName" placeholder="smtp.gmail.com..">
+			<label for="fname">Content</label> <input type="text" id="fname"
+				name="firstname" id="lName" placeholder="Port.."> <label
+				for="fname">URL</label> <input type="text" id="fname"
+				name="firstname" id="age" placeholder="Email "> <input
+				type="submit" value="Save Template" id="update-usr-btn">
+		</form>
+	</div>
+
+</body>
+<script type="text/javascript">
+$('#user-reg-form').submit(function(e) { 
+	e.preventDeult();
+});
+$("#update-usr-btn").click(function(){
+	$.ajax({
+		  method: "POST",
+		  url: this.projectDetails.url+""+this.projectDetails.restappname+"/user/updateUser/"+$("#group").val(),
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"fName":"'+$("#pw_grp_name").val()+',"lName":"'+$("#lName").val()+'"}'
+		})
+		.done(function( msg ) {
+		    alert( "Data Saved: " + msg );
+		});
+
+});
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#profile-img-tag').attr('src', e.target.result);
+            $('#profile-img-tag').attr('style', "display:table-cell");
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#profile-img-path").change(function(){
+    readURL(this);
+});
+</script>

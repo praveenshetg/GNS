@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600);
+.log-form  {
+ box-sizing: border-box;
+}
+
+body {
+  font-family: 'open sans', helvetica, arial, sans;
+  background: url("../images/btightyellow.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.log-form {
+  width: 30%;
+  min-width: 320px;
+  max-width: 475px;
+  background: #fff;
+  position: fixed;
+  top: 45%;
+  left: 45%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 40em) {
+}
+.log-form form {
+  display: block;
+  width: 100%;
+  padding: 1.5em;
+      #background: rgba(0,0,0,.05);
+}
+.log-form h2 {
+  #color: #5d5d5d;
+  color: goldenrod;
+  font-family: 'open sans condensed';
+  font-size: 1.35em;
+  display: block;
+  background: #2a2a2a;
+  #width: 100%;
+  text-transform: uppercase;
+  padding: .75em 1em .75em 1.5em;
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.05);
+  border: 1px solid #1d1d1d;
+  margin: 0;
+  font-weight: 200;
+}
+.log-form input {
+    display: block;
+    width: 80%;
+    margin-bottom: 2em;
+    padding: .5em 0;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 1.25em;
+    color: goldenrod;
+    MARGIN: 0PX 0PX 6PX 4PX;
+}
+.log-form input:focus {
+  outline: none;
+}
+.log-form .btn {
+  display: inline-block;
+  background: goldenrod;
+  border: 1px solid goldenrod;
+  padding: .5em 2em;
+  color: white;
+  margin-right: .5em;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+.log-form .btn:hover {
+  #background: goldenrod;
+}
+.log-form .btn:active {
+  #background: #1fb5bf;
+  #box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.log-form .btn:focus {
+  outline: none;
+}
+.log-form .forgot {
+  color: goldenrod;
+  line-height: .5em;
+  position: relative;
+  top: 1em;
+  text-decoration: none;
+  font-size: .75em;
+  margin: 0;
+  padding: 0;
+  float: right;
+      RIGHT: 40PX;
+}
+.log-form .forgot:hover {
+  color: #1ba0a9;
+}
+
+    .login-back{
+  	display:none;
+  }
+   @media (max-width: 400px) {
+  body {
+     #background: black !important;
+      background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+  }
+  .log-form form {
+         padding: 25px;
+    box-sizing: border-box;
+    margin: 0px;
+	}
+	.log-form h2 {
+    display: none;
+	}
+	.log-form input{
+	    background: transparent;
+	}
+	.log-form{
+	    background: transparent;
+    bottom: 50px;
+    top: auto;
+    left: auto;
+    transform: none;
+    width:100%;
+	}
+	.log-form .btn {
+	border-radius: 2em;
+    color: goldenrod;
+    background: #575757;
+    border: 1px solid goldenrod;
+    padding: .5em 2em;
+    width:80%;
+     MARGIN: 2PX 12PX 5PX 24PX;
+  }
+  .log-form input{
+    display: block;
+    border-bottom: 1px solid #464444;
+    padding-bottom: 4px;
+    width: 80%;
+    MARGIN: 2PX 12PX 5PX 24PX;
+    color: #9e9888;
+  }
+  .log-form p{
+      padding: 20px;
+    MARGIN: 2PX 12PX 5PX 24PX;
+    color: goldenrod;
+    }
+    .login-back{
+        width: 100%;
+	    top: 20%;
+	    position: fixed;
+	    margin: 0 auto;
+	    display:block;
+    }
+  }
+  
+  

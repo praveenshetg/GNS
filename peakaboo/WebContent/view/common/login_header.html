@@ -1,0 +1,45 @@
+<div class="company-name">
+	<div class="c-name" id="c-name"></div>
+</div>
+<div class="user-menu">
+		<button type="button" id="show-login-btn" class="ha-button enable-login-btn">Login</button>
+		<button type="button" id="show-home-btn" class="ha-button enable-login-btn">Home</button>
+</div>
+
+<script>
+$("#c-name").html(projectDetails.appname);
+$("#show-home-btn").hide();
+$("#show-login-btn").click(function() {
+	setView("login");
+	$("#show-login-btn").hide();
+	$("#show-home-btn").show();
+});
+$("#show-home-btn").click(function() {
+	setView("view/home");
+	$("#show-home-btn").hide();
+	$("#show-login-btn").show();
+});
+$(".c-name").click(function(){
+	$("#show-home-btn").click();
+});
+</script>
+<style>
+.enable-login-btn{
+    margin: 18px 0px 16px 0px;
+    border-radius: 2em;
+    color: goldenrod;
+    background: #575757;
+    border: 1px solid goldenrod;
+    padding: .5em 2em;
+}
+
+button.enable-login-btn:hover{
+    margin: 18px 0px 16px 10px;
+    border-radius: 2em;
+    color: white;
+    background: #575757;
+    border: 1px solid goldenrod;
+    padding: .5em 2em;
+}
+
+</style>

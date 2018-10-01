@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+<div class="ui calendar" id="example1">
+
+				<div class="ui input left icon w-100">
+					<i class="calendar icon"></i> <input type="text"
+						placeholder="Date/Time" id="sc-date">
+				</div>
+			</div>
+			<script>
+			$('#example1').calendar({
+				today : true, // show a 'today/now' button at the bottom of the calendar 
+				closable : true,
+				ampm : true,
+				multiMonth : 1,
+				formatter : {
+					date : function(date, settings) {
+						if (!date)
+							return '';
+						var day = date.getDate() + '';
+						if (day.length < 2) {
+							day = '0' + day;
+						}
+						var month = (date.getMonth() + 1) + '';
+						if (month.length < 2) {
+							month = '0' + month;
+						}
+						var year = date.getFullYear();
+						return day + '/' + month + '/' + year;
+					}
+				},
+				monthFirst : false
+			// month before day when parsing/converting date from/to text 
+			});
+			</script>

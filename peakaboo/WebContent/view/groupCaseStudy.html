@@ -1,0 +1,52 @@
+<html>
+<body>
+<div class="main-div">
+<div class="form-div">
+<H1><i class="fa fa-group"></i> Create Group Case Study</H1>
+<hr>
+
+  <form action="" id="grp_reg_form">
+   <label for="fname">Group</label>
+    <select name="group" id="group_id">
+				</select>
+				 <label for="fname">Industry</label>
+    <select name="group" id="industry">
+				</select>
+    <label for="fname">Indz</label>
+    <input type="text" id="pw_grp_name" name="group-name" class="text-center" placeholder="Group Name.." required="true">
+
+  <input type="submit" value="Save Details" id="create-group-btn">
+  </form>
+</div>
+</div>
+
+
+</body>
+
+<script>
+$('#grp_reg_form').submit(function(e) { 
+	e.preventDefault();
+});
+$("#create-group-btn").click(function(){
+	if($("#pw_grp_name").val()==''){
+		return;
+	}
+	var jsonData =JSON.parse('{"name":"'+$("#pw_grp_name").val()+'"}');
+	$.ajax({
+		  method: "POST",
+		  url: projectDetails.url+""+projectDetails.restappname+"/group/addGroup",
+		  contentType: "application/json",
+		  data: '{"name":"'+$("#pw_grp_name").val().toUpperCase()+'"}'
+		}).done(function( msg ) {
+			$("#grp_reg_form input").val("");
+			showSnackBar("Group Created Successfully !!!")
+		  //  alert( "Data Saved: " + msg );
+		  getGroupList();
+			//paginateTable("grp-table",5);
+		});
+
+});
+generateGroupNamesOptions('group_id');
+</script>
+
+</html>

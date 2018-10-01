@@ -1,0 +1,58 @@
+<div class="form-div">
+<H1><i class="fa fa-envelope"></i> Mail Configuration</H1>
+	<hr>
+  <form action="#" id="mail-config-form">
+    <label for="fname">Mail Server (SMTP)</label>
+    <input type="text" id="host"  placeholder="smtp.gmail.com">
+ <label for="fname">Port</label>
+    <input type="text" id="port"  placeholder="465">
+     <label for="fname">Server-Email</label>
+    <input type="text" id="server-email"  placeholder="Email Id">
+         <label for="fname">Password</label>
+    <input type="password" id="server-password" placeholder="Password">
+         <label for="fname"></label>
+    <input type="submit" value="Save Settings" id="save-mail-config-btn">
+  </form>
+</div>
+<style>
+.form-div input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    }
+
+</style>
+
+<script type="text/javascript">
+$.ajax({
+	  method: "GET",
+	  url: projectDetails.url+""+projectDetails.restappname+"/settings/fetchMailConfiguration",
+	  dataType: "json",
+	  contentType: "application/json",
+	})
+	.done(function( mailConfigDetails ) {
+	fillMailCongfigDetails(mailConfigDetails);
+	});
+$('#mail-config-form').submit(function(e) { 
+	e.preventDefault();
+});
+$("#save-mail-config-btn").click(function(){
+	$.ajax({
+		  method: "POST",
+		  url: projectDetails.url+""+projectDetails.restappname+"/settings/mailConfiguration",
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"host":"'+$("#host").val()+'","port":"'+$("#port").val()+'","username":"'+$("#server-email").val()+'","password":"'+$("#server-password").val()+'"}'
+		})
+		.done(function() {
+		    showSnackBar( "Details Saved");
+		});
+
+});
+</script>
+
