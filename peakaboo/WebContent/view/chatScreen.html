@@ -1,0 +1,29 @@
+	<div class="main-div">
+		<div class="form-div chat-screen" style="padding: 0px !important;">
+
+			<h1
+				style="background-color: #312929; color: goldenrod; border-radius: 0px;">
+				<i class="fa fa-comments-o"> </i> <span id="grp-header" style="font-size: 18px !important;width: 80%;"><select id="group_id"></select></span><i
+					class="fa fa-refresh refresh-msgs" id="refresh-msgs" style=""></i>
+			</h1>
+		</div>
+		<div id="chatList"></div>
+		<!-- 			<form action="" id="chat_form" class="ch-form"> -->
+
+		<div class="chat-input-outer" >
+			<div class="smile-icon-div">
+				<i class="fa fa-smile-o"></i>
+			</div>
+			<input type="text" id="user-msg" name="group-name" class="user-msg"
+				placeholder="Type a message" required autocomplete="off">
+			<div class="attachment-clip-div">
+			<input id="user-chat-attachment" class="findDocumentOnboarding" accept=".png, .jpg, .jpeg, .mp4, .pdf" type="file" />
+					<i class="fa fa-plus-circle"></i>
+				
+			</div>
+			<div id="send-message-btn" class="send-message-btn">
+				<i class="fa fa-send"></i> send
+			</div>
+		</div>
+	</div>
+<script src="js/chatScreen.js"></script>	

@@ -1,0 +1,59 @@
+<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="css/scheduler.css">
+<link rel="stylesheet" type="text/css" href="css/plugin/multiple-select.css"/>
+	<div class="form-div sc-form-div">
+		<H1><i class="fa fa-hourglass-half"></i> Schedule Refresher</H1>
+		<hr>
+		<form action="" id="sch-form" class="sc-form">
+			<label for="fname">Subject [ Used only for mail subject ]</label> <input type="text" id="sc-subject"
+				name="firstname" placeholder="Mail Subject"> <label
+				for="fname">Description <span class="required">*</span></label>
+			<textarea rows="20" cols="40" class="w-100 h-50" id="sc-desc" placeholder="Description" ></textarea>
+			
+	<label for="fname">Groups [Select Recipient Groups] <span class="required">*</span></label>
+    <select name="group" id = "group_id" multiple="multiple">
+    </select>
+<br>
+<br>
+	<label for="fname">Date/Time <span class="required">*</span></label>
+			<div id="sc-calender"></div>
+			
+<div class="ui calendar" id="sc-date-wrapper">
+	<div class="ui input left icon w-100">
+		<i class="calendar icon"></i> <input type="text"
+			placeholder="Schedule Date/Time" id="sc-date">
+	</div>
+</div>
+
+			<br>
+	<div>
+   <label for="includeAttachment">Include Attachment?</label>
+	<label class="switch">
+  	<input type="checkbox" id="includeAttachment">
+	  <span class="slider round"></span>
+	</label>
+	<input type="text"  name="hasAttachment"  id ="hasAttachment" placeholder="h" style="display:none">
+	</div>
+	<br>
+	<br>
+	<input id="attachment-path" class="findDocumentOnboarding" accept=".png, .jpg, .jpeg, .mp4, .pdf" type="file" style="display:none"/>
+	<br>
+	<br>
+	<div class="radio-grp" style="display:none;">
+	<label for="fname">Repeat</label>
+	<br>
+		<div class="radio">
+			<input type="radio" name="gender" value="male" checked> Daily
+		</div>
+		<div class="radio">
+			<input type="radio" name="gender" value="female"> Weekly
+		</div>
+		<div class="radio">
+			<input type="radio" name="gender" value="other"> None
+		</div>
+	</div>
+	<input type="submit" value="Submit" id="sc-create-event-btn">
+	</form>
+  <div id="fbq-table"></div>
+	</div>
+<script src="js/scheduler.js"></script>

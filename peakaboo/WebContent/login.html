@@ -1,0 +1,28 @@
+<style>
+body { 
+    background: url("images/btightyellow.jpg")  fixed center !important; 
+    }
+     @media (max-width: 400px) {
+  body {
+     background: black !important;
+      background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+  }
+  }
+</style>
+<div class="login-back">
+<img src="images/peakaboo_wall_mobile.jpg" class="login-wall" style="width: 100%;">
+</div>
+<div class="log-form" id="login_form">
+  <h2>Login to your account</h2>
+  <form action="">
+  
+  <p style="padding:2px;" id="login-error-msg">Enter username and password.</p>
+    <input type="text" title="username" placeholder="username" id="pw-username"  autocomplete="off"/>
+    <input type="password" title="username" placeholder="password"  id="pw-password"   autocomplete="off"/>
+    <button type="submit" class="login-btn btn" id="login-btn">Login</button>
+    <a class="forgot" href="/peakaboo/forgot_pass.html" style="display:none;" id="pw-forgot-pass" >Forgot Password?</a>
+  </form>
+</div>
+<script src="js/pwLogin.js"></script>

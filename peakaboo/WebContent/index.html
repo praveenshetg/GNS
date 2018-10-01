@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  	<title>Peakaboo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" href="images/peakaboo.png">
+	<link rel="stylesheet" type="text/css" href="css/chat-screen.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="css/forms.css"/>
+	<link rel="stylesheet" type="text/css" href="css/side-menu.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/modal.css"/>
+	<link rel="stylesheet" type="text/css" href="css/scheduler.css">
+	<link rel="stylesheet" type="text/css" href="css/plugin/google-fonts.css"/>
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/app.css"/>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+	<div class="nav"></div>
+	<div id="outer-content">
+		<div class="table-container">
+			<div id="main-content"></div>
+		</div>
+	</div>
+	<div id="snackbar" class="snackbar"></div>
+	<div class="spinner" ></div>
+	<div id="pw-img-Modal" class="pw-img-modal">
+  <span class="pw-img-modal-close">&times;</span>
+  <img class="pw-img-modal-content" src="media/xyz.jpg" alt="image" id="img01">
+  
+  <div id="pw-img-caption"></div>
+	</div>
+	<script src="js/app.js"></script>
+	<script src="js/plugin/semantic.min.js"></script>
+	<script src="js/base.js"></script>
+	<script src="js/sideMenu.js"></script>
+	<script src="js/utility.js"></script>
+	<script src="js/plugin/multiple-select.js"></script>
+	<script>
+		var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:9080/webservices/rest/v1/business-operation/cases/risk-returns/downloadReport/redebit",
+  "method": "GET",
+  "headers": {
+    "content-type": "application/x-www-form-urlencoded",
+    "intuit_tid": "adb99aa5-ceab-4fa9-a6da-30ab8d785348",
+    "authorization": "Intuit_IAM_Authentication intuit_token_type=IAM-Ticket, intuit_userid=1003700770, intuit_token=V1-63-a393udqrjvr8qol1dryg7c, intuit_appid=Intuit.ems.csr-agent-tools, intuit_app_secret=preprdiMs590alybuSDBp7EZBGR0FnbfpRCJLatM, , intuit_realmid=50000000",
+    "accept": "application/vnd.ms-excel",
+    "cache-control": "no-cache",
+    "postman-token": "0408e9cc-7cd0-656d-3934-3fac6f089403"
+  },
+  "data": ""
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+	</script>
+</body>	
+</html>

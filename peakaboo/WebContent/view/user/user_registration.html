@@ -1,0 +1,57 @@
+
+
+<html>
+
+<body>
+
+<div class="form-div">
+<H1><i class="fa fa-user"></i> User Registration</H1>
+	<hr>
+  <form action="" id="user-reg-form">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" id="fName" placeholder="First Name..">
+ <label for="fname">Last Name</label>
+    <input type="text" id="fname" name="firstname" id="lName" placeholder="Last Name..">
+     <label for="fname">Designation</label>
+    <input type="text" id="fname" name="firstname" id="age" placeholder="Designation ">
+         <label for="fname">Official Email</label>
+    <input type="text" id="fname" name="firstname" id="age" placeholder="Official Email">
+         <label for="fname">Personal Email</label>
+    <input type="text" id="fname" name="firstname" id="age" placeholder="Personal Email">
+     <label for="fname">Date Of Birth</label>
+    <input type="date" id="fname" name="firstname"  id ="dob" placeholder="Date Of Birth..">
+    <label for="fname">Group</label>
+    <select name="group" id="group">
+						<option value="1">Group1</option>
+						<option value="2">Group2</option>
+						<option value="3">Group3</option>
+
+				</select>
+    <input type="submit" value="Create User" id="create-user-btn">
+<!--      <div id="create-user-btn" class="pw-submit-btn">Submit</div> -->
+  </form>
+</div>
+
+</body>
+<script type="text/javascript">
+$('#user-reg-form').submit(function(e) { 
+	e.preventDefault();
+});
+$("#create-user-btn").click(function(){
+	$.ajax({
+		  method: "POST",
+		  url: this.projectDetails.url+""+this.projectDetails.restappname+"/user/addUser/1"+$("#group").val(),
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"fName":"'+$("#pw_grp_name").val()+',"lName":"'+$("#lName").val()+'"}'
+		})
+		.done(function( msg ) {
+			showSnackBar("User Created Successfully !!!")
+		}).error(function( msg ) {
+			showSnackBar("User save failed !!!")
+		});;
+
+});
+</script>
+
+</html>

@@ -1,0 +1,117 @@
+<link rel="stylesheet" type="text/css" href="css/user-profile.css">
+<div class="div0">
+	<div class="div1">
+		<div>
+			<div class="banner-name">
+				<h2 id="banner-name-title">Praveen Shet G</h2>
+				<h4 id="banner-name-job">Software Engineer, Intuit</h4>
+			</div>
+			<div class="banner-img">
+			</div>
+		</div>
+
+	</div>
+	<img src="images/img_avatar.png" class="profile-pic-page" id="user-view-img" alt="Avatar"
+		style="">
+</div>			
+	<div class="div2">
+	<div  class="div2-1">
+		<div class="sec-1">
+			<div class="sec-1-1">
+				<h3>About</h3>
+				<table class="grp-table">
+					<tr>
+						<td colspan=2 style="height: 40px;"><p class="pr-abt" id="pr-abt">I am not perfect, But I am limited edition</p></td>
+					</tr>
+				</table>
+			</div>
+			<div class="sec-1-2">
+				<h3>Professional Information</h3>
+				<table class="grp-table">
+					<tr>
+						<td>Organization</td>
+						<td>:</td>
+						<td id="org"></td>
+					</tr>
+<!-- 					<tr> -->
+<!-- 						<td>Experience</td> -->
+<!-- 						<td>:</td> -->
+<!-- 						<td>X Years</td> -->
+<!-- 					</tr> -->
+					<tr>
+						<td>Role</td>
+						<td>:</td>
+						<td id="designation"></td>
+					</tr>
+					</table>
+
+			</div>
+		</div>
+		<div class="sec-2">
+			<div class="sec-2-1">
+				<h3>Contact Information</h3>
+					<table class="grp-table">
+					<tr>
+						<td>Email</td>
+						<td>:</td>
+						<td id="pEmail"></td>
+					</tr>
+					<tr>
+						<td>Phone</td>
+						<td>:</td>
+						<td id="phone">X Years</td>
+					</tr>
+<!-- 					<tr> -->
+<!-- 						<td>City</td> -->
+<!-- 						<td>:</td> -->
+<!-- 						<td id="city">Bangalore</td> -->
+<!-- 					</tr> -->
+					</table>
+			</div>
+			<div class="sec-2-2">
+				<h3>Basic Information</h3>
+					<table class="grp-table">
+					<tr>
+						<td>Name</td>
+						<td>:</td>
+						<td id="uName"></td>
+					</tr>
+<!-- 					<tr> -->
+<!-- 						<td>Gender</td> -->
+<!-- 						<td>:</td> -->
+<!-- 						<td id="gender"></td> -->
+<!-- 					</tr> -->
+					<tr>
+						<td>Birthday</td>
+						<td>:</td>
+						<td id="dob"></td>
+					</tr>
+					</table>
+			</div>
+		</div>
+		</div> <!-- Information Outer Div -->
+		<div class="div2-2">
+			<div class="sec-3">
+				<h3 class="pr-h3">Group Media Files</h3>
+				<div id="media-outer-div"></div>
+			</div>
+		</div>
+	
+</div>
+
+<script>
+var divContainer = document.getElementById("user-view-img");
+if(userDetails.user.image!==null){
+divContainer.setAttribute("src", 'data:image/png;base64,' + userDetails.user.image);
+}
+$("#banner-name-title").html(""+(userDetails.user.fName?userDetails.user.fName :"User Name")+" "+(userDetails.user.fName?userDetails.user.lName :""));
+$("#uName").html(""+(userDetails.user.fName?userDetails.user.fName :"User Name")+" "+(userDetails.user.fName?userDetails.user.lName :""));
+$("#banner-name-job").html(""+(userDetails.user.designation?userDetails.user.designation :"Job Title")+", "+(userDetails.user.organization?userDetails.user.organization :"Organization"));
+$("#pr-abt").html(""+(userDetails.user.aboutYou?userDetails.user.aboutYou :"How would you describe yourself ?"));
+$("#designation").html(""+(userDetails.user.designation?userDetails.user.designation :""));
+$("#phone").html("XX-XXX-XXXX");
+$("#gender").html(""+(userDetails.user.gender?userDetails.user.gender :""));
+$("#dob").html(""+(userDetails.user.dob?userDetails.user.dob :"xx-xx-xxxx"));
+$("#pEmail").html(""+(userDetails.user.pEmail?userDetails.user.pEmail :"xxxxx@xxxx.com"));
+getMediaChatList(userDetails.group.id);
+</script>

@@ -1,0 +1,96 @@
+<style>
+.grp-table {
+	width: 100%;
+}
+
+.grp-table table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.grp-table td, .grp-table th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+.grp-table th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+.grp-table tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#data tr {
+	display: none;
+}
+.pw_rate_widget {
+    #border:     1px solid #CCC;
+       overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: auto;
+    height: 34px;
+}
+.pw_ratings_stars {
+    background: url(images/Star_empty.png) no-repeat;
+       float: left;
+    height: 21px;
+    padding: 0px;
+    width: 26px;
+    #border:2px solid red;
+        background-size: contain; 
+    
+}
+.ratings_vote {
+    background: url(images/star_full.png) no-repeat;
+    #border:1px solid green;
+    background-size: contain; 
+}
+.ratings_over {
+    background: url(images/star_full.png) no-repeat;
+    #border:1px solid gray;
+    background-size: contain; 
+}
+.total_votes {
+    background: #eaeaea;
+    top: 58px;
+    left: 0;
+    padding: 5px;
+    position:   absolute;  
+} 
+.ans_rating {
+    font: 10px verdana, sans-serif;
+    margin-left: 15px;
+    width: 180px;
+}
+</style>
+<div class="form-div">
+<H1><i class="fa fa-question-circle-o"></i> FeedBack</H1>
+	<hr>
+<div id="showFeedBackData"></div>
+</div>
+
+<script>
+getQuestions();	
+
+//createDynamiForm(questions,"showFeedBackData");
+//addStarEven("rating");
+//addStarEven("rating-2");
+//paginateTable("showFeedBackData",5);
+function editFBQuestion(flag){
+	if(flag){
+		$("#fb-form").show();
+	}else{
+		$("#fb-form").hide();
+	}
+}
+editFBQuestion(false);
+$(document).ready(function(){
+   // generateEvents();
+});
+</script>

@@ -1,0 +1,12 @@
+<button id="home-btn" class="home-btn active-btn anaymous end_user  admin">
+	<i class="fa fa-home"></i>
+	<p>Home</p>
+	<hr class="style18" />
+</button>
+<script>
+$(document).on("click", "#home-btn", function(e) {
+	  resetButtonStatus();
+		$("#home-btn").addClass("active-btn")
+		setView("view/home");
+ });
+</script>

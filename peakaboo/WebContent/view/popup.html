@@ -1,0 +1,71 @@
+
+<html>
+<style>
+input, select {
+	display: block;
+	margin: 2px
+}
+
+.c-container {
+	border-radius: 1em;
+	position: absolute;
+	width: 500px;
+	height: auto;
+	z-index: 15;
+	top: 25%;
+	left: 35%;
+	margin: -100px 0 0 -150px;
+	background: #babbbf;
+	padding: 20px;
+}
+td{
+width:350px;
+}
+</style>
+
+<body>
+	<div class="c-container">
+		<table>
+			<tr>
+				<td><label>First Name</label></td>
+				<td><input type="text" name="user_first_name"></td>
+			</tr>
+			<tr>
+				<td><label>Last Name</label></td>
+				<td><input type="text" name="user_last_name"></td>
+			</tr>
+			<tr>
+				<td><label>Age</label></td>
+				<td><input type="text" name="age"></td>
+			</tr>
+			<tr>
+				<td>DoB</td><td><input type="text" name="dob"></td>
+			</tr>
+			<tr>
+				<td><label>Personal Email</label></td>
+				<td><input type="text" name="personal_email"></td>
+			</tr>
+			<tr>
+				<td><label>Official Email</label></td>
+				<td><input type="text" name="official_email"></td>
+				
+				</tr>
+				<tr>
+				<td><label>Group</label></td>
+				<td><select name="group">
+						<option value="1">Group1</option>
+						<option value="2">Group2</option>
+						<option value="3">Group3</option>
+
+				</select></td>
+			</tr>
+			<tr>
+				
+				<td colspan="2">
+					<button id="create_group">Create User</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

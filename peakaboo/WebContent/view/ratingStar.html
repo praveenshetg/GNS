@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script><title>Page Title</title>
+</head>
+<body>
+<div >
+<div class='ans_rating'>
+    Rate: Raiders of the Lost Ark
+    <div id="r1" class="pw_rate_widget">
+        <div class="star_1 pw_ratings_stars"></div>
+        <div class="star_2 pw_ratings_stars"></div>
+        <div class="star_3 pw_ratings_stars"></div>
+        <div class="star_4 pw_ratings_stars"></div>
+        <div class="star_5 pw_ratings_stars"></div>
+        <div class="total_votes">vote data</div>
+    </div>
+</div>
+ 
+<div class='ans_rating'>
+    Rate: The Hunt for Red Octoberhfh htf h fg hh h fh fgh fh fjhf?
+    <div id="r2" class="pw_rate_widget">
+        <div class="star_1 pw_ratings_stars"></div>
+        <div class="star_2 pw_ratings_stars"></div>
+        <div class="star_3 pw_ratings_stars"></div>
+        <div class="star_4 pw_ratings_stars"></div>
+        <div class="star_5 pw_ratings_stars"></div>
+        <div class="total_votes">vote data</div>
+    </div>
+</div>
+<div class='ans_rating'>
+<ul>
+        <li><input type='checkbox' id='checkAnswer0'/><label id='answer0'>answer0</label></li>
+        <li><input type='checkbox' id='checkAnswer1'/><label id='answer1'>answer1</label></li>
+        <li><input type='checkbox' id='checkAnswer2'/><label id='answer2'>answer2</label></li>
+        <li><input type='checkbox' id='checkAnswer3'/><label id='answer3'>answer3</label></li>
+    </ul>
+    </div>
+</div> 
+<div id="quiz"></div>
+</body>
+
+<style>
+.pw_rate_widget {
+    #border:     1px solid #CCC;
+    overflow:   visible;
+    padding:    10px;
+    position:   relative;
+    width:      180px;
+    height:     32px;
+}
+.pw_ratings_stars {
+    background: url(images/Star_empty.png) no-repeat;
+    float:      left;
+    height:     28px;
+    padding:    2px;
+    width:      32px;
+    #border:2px solid red;
+        background-size: contain; 
+    
+}
+.ratings_vote {
+    background: url(images/star_full.png) no-repeat;
+    #border:1px solid green;
+    background-size: contain; 
+}
+.ratings_over {
+    background: url(images/star_full.png) no-repeat;
+    #border:1px solid gray;
+    background-size: contain; 
+}
+.total_votes {
+    background: #eaeaea;
+    top: 58px;
+    left: 0;
+    padding: 5px;
+    position:   absolute;  
+} 
+.ans_rating {
+    font: 10px verdana, sans-serif;
+    margin: 0 auto 40px auto;
+    width: 180px;
+}
+</style>
+<script>
+var questions = [{
+    question: "What is 2*5?",
+    choices: [2, 5, 10, 15, 20],
+    correctAnswer: 2
+  }, {
+    question: "What is 3*6?",
+    choices: [3, 6, 9, 12, 18],
+    correctAnswer: 4
+  }, {
+    question: "What is 8*9?",
+    choices: [72, 99, 108, 134, 156],
+    correctAnswer: 0
+  }, {
+    question: "What is 1*7?",
+    choices: [4, 5, 6, 7, 8],
+    correctAnswer: 3
+  }, {
+    question: "What is 8*8?",
+    choices: [20, 30, 40, 50, 64],
+    correctAnswer: 4
+  }];
+var quiz = $('#quiz'); //Quiz div object
+$.each( questions, function( index, value ){
+   
+    var nextQuestion = createQuestionElement(index); 
+    
+    quiz.append(nextQuestion)
+    // and the rest of your code
+});
+function createQuestionElement(index) {
+    var qElement = $('<div>', {
+      id: 'question'
+    });
+    
+    var header = $('<h2>Question ' + (index + 1) + ':</h2>');
+    qElement.append(header);
+    
+    var question = $('<p>').append(questions[index].question);
+    qElement.append(question);
+    
+    var radioButtons = createRadios(index);
+    qElement.append(radioButtons);
+    
+    return qElement;
+  }
+// Creates a list of the answer choices as radio inputs
+function createRadios(index) {
+  var radioList = $('<ul>');
+  var item;
+  var input = '';
+  for (var i = 0; i < questions[index].choices.length; i++) {
+    item = $('<li>');
+    input = '<input type="radio" name="answer" value=' + i + ' />';
+    input += questions[index].choices[i];
+    item.append(input);
+    radioList.append(item);
+  }
+  return radioList;
+}
+$('.pw_ratings_stars').hover(
+            // Handles the mouseover
+            function() {
+                $(this).prevAll().andSelf().addClass('ratings_over');
+                $(this).nextAll().removeClass('ratings_vote'); 
+            },
+            // Handles the mouseout
+            function() {
+                $(this).prevAll().andSelf().removeClass('ratings_over');
+            }
+        );
+           $('.pw_rate_widget').each(function(i) {
+            var widget = this;
+            var out_data = {
+                widget_id : $(widget).attr('id'),
+                fetch: 1
+            };
+           
+        });
+            
+        var x= {
+            "widget_id"     : "r1",
+            "number_votes"  : 129,
+            "total_points"  : 344,
+            "dec_avg"       : 2.7,
+            "whole_avg"     : 3
+        }
+            function set_votes(widget) {
+                
+               // var avg = $(widget).data('fsr').whole_avg;
+                ///var votes = $(widget).data('fsr').number_votes;
+                //var exact = $(widget).data('fsr').dec_avg;
+                
+                //$(widget).find('.star_' + ).prevAll().andSelf().addClass('ratings_vote');
+                $(widget).find('.star_' + avg).nextAll().removeClass('ratings_vote'); 
+                $(widget).find('.total_votes').text( votes + ' votes recorded (' + exact + ' rating)' );
+            }
+		$('.pw_ratings_stars').bind('click', function() {
+            var star = this;
+            var widget = $(this).parent();
+            var index = Array.prototype.indexOf.call(this.parentNode.children, this);
+            var pos= index+1;
+            var clicked_data = {
+                clicked_on : $(star).attr('class'),
+                widget_id : widget.attr('id')
+            };
+            var out_data = {
+                    widget_id : $(widget).attr('id'),
+                    fetch: 1
+                };
+                $(widget).find('.star_' + pos).prevAll().andSelf().addClass('ratings_vote');
+                $(widget).find('.star_' + pos).nextAll().removeClass('ratings_vote'); 
+           });
+            </script>
+
+</html>

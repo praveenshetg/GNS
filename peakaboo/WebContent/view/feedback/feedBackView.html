@@ -1,0 +1,73 @@
+
+
+<html>
+
+<body>
+
+<div class="form-div">
+<H1><i class="fa fa-question-circle-o"></i> FeedBack</H1>
+	<hr>
+  <form action="" id="fb-form">
+			<label for="fname">Question</label>
+			<textarea rows="1" cols="50" class="w-100 h-60" id="fb-question"></textarea>
+			<label for="fname">Type of Answer</label><br>
+			<div class="radio-grp">
+				<div class="radio">
+					<input type="radio" name="fbq-type" value="rating" checked>
+					Rating
+				</div>
+				<div class="radio">
+					<input type="radio" name="fbq-type" value="text"> Text Box
+				</div>
+				<div class="radio">
+					<input type="radio" name="fbq-type" value="other">
+					MULTIPLE CHOICE
+				</div>
+			</div>
+			<label for="fname">Sort Order</label> <select name="fbq-order" id="fbq-order">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+
+			</select> <label for="fname">Category</label> <select name="group" id="fbq-category">
+				<option value="general">General</option>
+				<option value="fff">Quality</option>
+				<option value="3">Coverage</option>
+
+			</select> <input type="submit" value="Submit" id="create-fb-quest-btn">
+		</form>
+		<div id="fbq-rating"></div>
+  <hr>
+  <div id="fbq-table"></div>
+	<hr>
+	
+</div>
+
+</body>
+<script type="text/javascript">
+$("#fbq-table").load("view/feedBackListView.html");
+//$("#fbq-rating").load("view/ratingView.html");
+$('#fb-form').submit(function(e) { 
+	e.preventDefault();
+});
+
+$("#create-fb-quest-btn").click(function(){
+	editFBQuestion(false);
+	$.ajax({
+		  method: "POST",
+		  url: this.projectDetails.url+""+this.projectDetails.restappname+"/user/addUser/"+$("#group").val(),
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"fName":"'+$("#pw_grp_name").val()+',"lName":"'+$("#lName").val()+'"}'
+		})
+		.done(function( msg ) {
+		    alert( "Data Saved: " + msg );
+		});
+
+});
+</script>
+
+</html>

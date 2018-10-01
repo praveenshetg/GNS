@@ -1,0 +1,123 @@
+
+
+<html>
+<style>
+.uploadpic-div{
+position:relative;
+display:inline-block;
+}
+
+.uploadpic-div button{
+    width: auto !important;
+    background-color: goldenrod;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.uploadpic-div input[type="file"]{
+margin-bottom:0px;
+left:0px;
+top:0px;
+position:absolute;
+margin-right:5px;
+    width: 83px;
+    height: 50px;
+opacity:0;
+border: 1px solid #ccc;
+}
+
+.uploadpic-div-outer img{
+display: none;
+    float: left;
+    max-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* margin-top: 10px !important; */
+    margin: 5px;
+    
+   #background-image: url('images/image1.jpg')
+}
+.choose-profile-pic-btn{
+margin-right: "5px";
+#z-index: -1;
+}
+</style>
+<body>
+
+<div class="form-div">
+<H1><i class="fa fa-user"></i> User Profile</H1>
+	<hr>
+  <form action="" id="user-reg-form">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" id="fName" placeholder="First Name..">
+ <label for="fname">Last Name</label>
+    <input type="text" id="fname" name="firstname" id="lName" placeholder="Last Name..">
+     <label for="fname">Designation</label>
+    <input type="text" id="fname" name="firstname" id="age" placeholder="Designation ">
+         <label for="fname">Official Email</label>
+    <input type="text" id="fname" name="firstname" id="age" placeholder="Official Email">
+         <label for="fname">Personal Email</label>
+    <input type="text" id="fname" name="firstname" id="age" placeholder="Personal Email">
+     <label for="fname">Date Of Birth</label>
+    <input type="date" id="fname" name="firstname"  id ="dob" placeholder="Date Of Birth..">
+    <label for="fname">Group</label>
+    <select name="group" id="group" readonly>
+						<option value="1">Group1</option>
+						<option value="2">Group2</option>
+						<option value="3">Group3</option>
+
+				</select>
+				<label for="fname">Profile Picture</label><br>
+				<div class="uploadpic-div-outer">
+				<img src="" id="profile-img-tag"  />
+				<div class="uploadpic-div">
+                            <input id="profile-img-path" class="profile-img-path" type="file"/>
+                            <button type="button" id="upload-profile-pic-file" class="ha-button upload-profile-pic-file" >Choose</button>
+                        </div>
+                        </div>
+    <input type="submit" value="Save Changes" id="update-usr-btn">
+ 	
+                        
+                       
+  </form>
+</div>
+
+</body>
+<script type="text/javascript">
+$('#user-reg-form').submit(function(e) { 
+	e.preventDeult();
+});
+$("#update-usr-btn").click(function(){
+	$.ajax({
+		  method: "POST",
+		  url: this.projectDetails.url+""+this.projectDetails.restappname+"/user/updateUser/"+$("#group").val(),
+		  dataType: "json",
+		    contentType: "application/json",
+		  data: '{"fName":"'+$("#pw_grp_name").val()+',"lName":"'+$("#lName").val()+'"}'
+		})
+		.done(function( msg ) {
+		    alert( "Data Saved: " + msg );
+		});
+
+});
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#profile-img-tag').attr('src', e.target.result);
+            $('#profile-img-tag').attr('style', "display:table-cell");
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#profile-img-path").change(function(){
+    readURL(this);
+});
+</script>
+
+</html>

@@ -1,0 +1,130 @@
+
+
+<html>
+<style>
+body{
+#background: url(../images/btightyellow.jpg) fixed center  !important;
+}
+.sc-form-div{
+    padding: 20px !important;
+        box-sizing: initial  !important;
+}
+.sc-form{
+ box-sizing: initial  !important;
+}
+.sc-form input[type=text], textarea{
+}
+</style>
+<body>
+
+	<div class="form-div sc-form-div">
+		<H1><i class="fa fa-hourglass-half"></i> Schedule Refresher</H1>
+		<hr>
+		<form action="" id="sch-form" class="sc-form">
+			<label for="fname">Subject</label> <input type="text" id="sc-subject"
+				name="firstname" placeholder="First Name.."> <label
+				for="fname">Description</label>
+			<textarea rows="20" cols="50" class="w-100 h-60" id="sc-desc"></textarea>
+			<label for="fname">Date/Time</label>
+			<div id="sc-calender"></div>
+<!-- 			<div class="ui calendar" id="example1"> -->
+
+<!-- 				<div class="ui input left icon w-100"> -->
+<!-- 					<i class="calendar icon"></i> <input type="text" -->
+<!-- 						placeholder="Date/Time" id="sc-date"> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+	
+	<label for="fname">Group</label>
+	<select name="group" multiselect="true">
+		<option value="1">Group1</option>
+		<option value="2">Group2</option>
+		<option value="3">Group3</option>
+
+	</select>
+	<label for="fname">Repeat</label>
+	<br>
+	<div class="radio-grp">
+		<div class="radio">
+			<input type="radio" name="gender" value="male" checked> Daily
+		</div>
+		<div class="radio">
+			<input type="radio" name="gender" value="female"> Weekly
+		</div>
+		<div class="radio">
+			<input type="radio" name="gender" value="other"> None
+		</div>
+	</div>
+	<input type="submit" value="Submit" id="sc-create-event-btn">
+	</form>
+	  <hr>
+  <div id="fbq-table"></div>
+	<hr>
+	
+	</div>
+
+</body>
+<script type="text/javascript">
+//$("#fbq-table").load("view/feedBackListView.html");
+	$('#sch-form').submit(function(e) {
+		e.preventDefault();
+	});
+// 	$('#example1').calendar({
+// 		today : true, // show a 'today/now' button at the bottom of the calendar 
+// 		closable : true,
+// 		ampm : true,
+// 		multiMonth : 1,
+// 		formatter : {
+// 			date : function(date, settings) {
+// 				if (!date)
+// 					return '';
+// 				var day = date.getDate() + '';
+// 				if (day.length < 2) {
+// 					day = '0' + day;
+// 				}
+// 				var month = (date.getMonth() + 1) + '';
+// 				if (month.length < 2) {
+// 					month = '0' + month;
+// 				}
+// 				var year = date.getFullYear();
+// 				return day + '/' + month + '/' + year;
+// 			}
+// 		},
+// 		monthFirst : false
+// 	// month before day when parsing/converting date from/to text 
+// 	});
+
+	 $("#sc-calender").load("view/scheduleCalender.html");
+
+	$("#sc-create-event-btn")
+			.click(
+					function() {
+											//showSnackBar("Event Scheduled Successfully!");
+
+				
+	var data = '{"subject":"'
+		+ $("#sc-subject").val()
+		+ '","description":"'
+		+ $("#sc-desc").val()
+		+ '","period":"'
+		+ $("#sc-date").val()
+		+ '","scheduleDate":"'
+		+ $("#sc-date").val()
+		+ '"}';
+	$.ajax({
+		method : "POST",
+		url : this.projectDetails.url+""+this.projectDetails.restappname+"/schedule/addEvent",
+		contentType : "application/json",
+		data : data
+	}).always(function(chatList) {
+		$("#sc-subject").val("");
+		$("#sc-desc").val("");
+		$("#sc-date").val("");
+		//alert("Data Saved: " + chatList);
+		showSnackBar("Event Scheduled Successfully!");
+	});
+					});
+</script>
+
+
+</html>
